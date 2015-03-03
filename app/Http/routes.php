@@ -11,14 +11,17 @@
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
+Route::get('about', 'PagesController@about');
+Route::get('contact', 'PagesController@contact');
+
+Route:resource('articles', 'ArticlesController');
 
 Route::pattern('id', '[0-9]+');
-Route::get('news/{id}/item', 'NewsController@item');
-Route::get('video/{id}/item', 'VideoController@item');
-Route::get('photo/{id}/item', 'PhotoController@item');
+Route::get('news/{id}', 'NewsController@show');
+Route::get('video/{id}', 'VideoController@show');
+Route::get('photo/{id}', 'PhotoController@show');
 
 //Route::get('auth/login', 'Auth\AuthController@showLoginForm');
 //Route::post('auth/login', 'Auth\AuthController@login');
