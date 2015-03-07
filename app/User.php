@@ -23,10 +23,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	protected $fillable = ['name', 'email', 'password'];
 =======
 	protected $fillable = [ 'name', 'username', 'email', 'password' ];
 >>>>>>> eb9dff7... Initial work on articles resource.
+=======
+	protected $fillable = [ 'name', 'username', 'email', 'password', 'confirmed' ,'confirmation_code' ];
+>>>>>>> 1d9b4c4... - Continued to incorporate assets into elixir workflow. Bower, gulpjs, bootstrap-sass, and font-awesome-sass now work. But, there is an issue with mix.scripts().
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -34,23 +38,31 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	protected $hidden = ['password', 'remember_token'];
 
 =======
 	protected $hidden = [ 'password', 'remember_token' ];
+=======
+	protected $hidden = [ 'password', 'remember_token', 'confirmed' ,'confirmation_code'  ];
+>>>>>>> 1d9b4c4... - Continued to incorporate assets into elixir workflow. Bower, gulpjs, bootstrap-sass, and font-awesome-sass now work. But, there is an issue with mix.scripts().
+=======
+	protected $hidden = [ 'password', 'remember_token' ,'confirmation_code'  ];
+>>>>>>> fdc0d41... - Replaced Hash with bcrypt in UserController.php.
 
 
 	public function roles()
 	{
-		return $this->belongsToMany('Role')->withTimestamps();
+		return $this->belongsToMany('App\Role')->withTimestamps();
 	}
 
 
-	public function hasRole($username)
+	public function hasRole($name)
 	{
 		foreach ($this->roles as $role)
 		{
-			if ( $role->username == $username )
+			if ( $role->name == $name )
 			{
 				return true;
 			}
