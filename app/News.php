@@ -126,10 +126,11 @@ class News extends Model {
 	{
 		return $this->belongsTo('App\User', 'user_id');
 	}
+
 	/**
 	 * Get the post's language.
 	 *
-	 * @return User
+	 * @return Language
 	 */
 	public function language()
 	{
@@ -137,9 +138,9 @@ class News extends Model {
 	}
 	
 	/**
-	 * Get the post's language.
+	 * Get the post's category.
 	 *
-	 * @return User
+	 * @return NewsCategory
 	 */
 	public function category()
 	{
