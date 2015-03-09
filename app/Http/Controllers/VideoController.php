@@ -26,11 +26,11 @@ class VideoController extends BaseController {
 use App\Video;
 use App\VideoAlbum;
 
-class VideoController extends BaseController {
+class VideoController extends Controller {
 
     public function __construct()
     {
-        parent::__construct();
+        $this->middleware('auth', [ 'except' => [ 'index', 'show' ] ]);
     }
 
     public function show($id)

@@ -28,10 +28,8 @@ class NewsController extends Controller {
 
 	public function __construct()
 	{
-		//parent::__construct();
 		$this->middleware('auth', [ 'except' => [ 'index', 'show' ] ]);
 	}
-
 
 	public function show($id)
 	{
