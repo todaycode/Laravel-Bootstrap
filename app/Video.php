@@ -54,7 +54,6 @@ use Illuminate\Support\Facades\URL;
 
 class Video extends Model {
 
-	protected $table = "video";
 	/**
 	 * Deletes a video
 	 *
@@ -100,7 +99,7 @@ class Video extends Model {
      */
     public function language()
     {
-        return $this->belongsTo('App\Language', 'language_id');
+        return $this->belongsTo('App\Language');
     }
 }
 >>>>>>> ef337ac... Added table seeders and TestDummy for:

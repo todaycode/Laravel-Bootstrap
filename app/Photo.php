@@ -44,7 +44,6 @@ use Illuminate\Support\Facades\URL;
 
 class Photo extends Model{
 
-	protected $table = "photo";
     /**
      * Deletes a gallery image.
      *
@@ -62,7 +61,7 @@ class Photo extends Model{
      */
     public function author()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\User');
     }
     /**
      * Get the gallery for pictures.
@@ -71,7 +70,7 @@ class Photo extends Model{
      */
     public function album()
     {
-        return $this->belongsTo('App\PhotoAlbum', 'photo_album_id');
+        return $this->belongsTo('App\PhotoAlbum');
     }
 
     /**
@@ -81,7 +80,7 @@ class Photo extends Model{
      */
     public function language()
     {
-        return $this->belongsTo('App\Language', 'language_id');
+        return $this->belongsTo('App\Language');
     }
 }
 >>>>>>> ef337ac... Added table seeders and TestDummy for:

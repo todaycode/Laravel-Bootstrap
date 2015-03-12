@@ -22,9 +22,9 @@ class NewsController extends BaseController {
 =======
 <?php namespace App\Http\Controllers;
 
-use App\News;
+use App\Article;
 
-class NewsController extends Controller {
+class ArticlesController extends Controller {
 
 	public function __construct()
 	{
@@ -34,7 +34,7 @@ class NewsController extends Controller {
 	public function show($id)
 	{
 		// Get all the blog posts
-		$news = News::find($id);
+		$news = Article::find($id);
 
 		return view('news.view_news', compact('news'));
 	}
