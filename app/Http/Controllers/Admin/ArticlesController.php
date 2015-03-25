@@ -241,11 +241,11 @@ class ArticlesController extends AdminController {
      */
     public function postCreate(NewsRequest $request)
     {
-        $news = new News();
+        $news = new Article();
         $news -> user_id = Auth::id();
         $news -> language_id = $request->language_id;
         $news -> title = $request->title;
-        $news -> newscategory_id = $request->newscategory_id;
+        $news -> article_category_id = $request->newscategory_id;
         $news -> introduction = $request->introduction;
         $news -> content = $request->content;
         $news -> source = $request->source;
@@ -275,7 +275,7 @@ class ArticlesController extends AdminController {
      */
     public function getEdit($id)
     {
-        $news = News::find($id);
+        $news = Article::find($id);
         $languages = Language::all();
         $language = $news->language_id;
 		$newscategories = ArticleCategory::all();
@@ -292,11 +292,11 @@ class ArticlesController extends AdminController {
      */
     public function postEdit(NewsRequest $request, $id)
     {
-        $news = News::find($id);
+        $news = Article::find($id);
         $news -> user_id = Auth::id();
         $news -> language_id = $request->language_id;
         $news -> title = $request->title;
-        $news -> newscategory_id = $request->newscategory_id;
+        $news -> article_category_id = $request->newscategory_id;
         $news -> introduction = $request->introduction;
         $news -> content = $request->content;
         $news -> source = $request->source;
@@ -328,7 +328,7 @@ class ArticlesController extends AdminController {
 
     public function getDelete($id)
     {
-        $news = News::find($id);
+        $news = Article::find($id);
         // Show the page
         return view('admin.news.delete', compact('news'));
     }
@@ -341,7 +341,7 @@ class ArticlesController extends AdminController {
      */
     public function postDelete(DeleteRequest $request,$id)
     {
-        $news = News::find($id);
+        $news = Article::find($id);
         $news->delete();
     }
 
@@ -379,7 +379,7 @@ class ArticlesController extends AdminController {
         $order = 1;
         foreach ($items as $value) {
             if ($value != '') {
-                News::where('id', '=', $value) -> update(array('position' => $order));
+                Article::where('id', '=', $value) -> update(array('position' => $order));
                 $order++;
             }
         }
