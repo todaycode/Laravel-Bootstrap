@@ -54,7 +54,8 @@ class CreateNewsTable extends Migration {
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticlesTable extends Migration {
+class CreateArticlesTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -64,9 +65,8 @@ class CreateArticlesTable extends Migration {
 	public function up()
 	{
 		// Create the `Posts` table
-		Schema::create('articles', function(Blueprint $table)
-		{
-            $table->engine = 'InnoDB';
+		Schema::create('articles', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->increments('id')->unsigned();
 			$table->unsignedInteger('language_id');
 			$table->foreign('language_id')->references('id')->on('languages');
