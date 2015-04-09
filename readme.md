@@ -318,6 +318,7 @@ If you are running on a system that handles notifications poorly or you simply d
 <a name="feature8"></a>
 ##How Starter Site is look like
 
+<<<<<<< HEAD
 ![Index](http://i58.tinypic.com/m5y07.png)
 ![Index continue](http://i58.tinypic.com/2z65jyv.png)
 ![Register new user](http://i59.tinypic.com/2n9i0cj.png)
@@ -330,3 +331,11 @@ If you are running on a system that handles notifications poorly or you simply d
 ![Admin photos](http://i59.tinypic.com/55nody.png)
 ![Admin list users](http://i60.tinypic.com/1zen3n.png)
 >>>>>>> e79ae49... update readme install nodejs and grunt
+=======
+![Index](http://i62.tinypic.com/2ed8ins.jpg)
+![Login](http://i62.tinypic.com/madw7q.jpg)
+![Register new user](http://i62.tinypic.com/1586pew.jpg)
+![Admin dashboard](http://i61.tinypic.com/2ezgz2w.jpg)
+![Admin users](http://i59.tinypic.com/24lpixt.jpg)
+![Admin list users](http://i60.tinypic.com/28b9my1.jpg)
+>>>>>>> 594b9b1... change how to starter site now looks like
