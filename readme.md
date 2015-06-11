@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Laravel Framework 5  Bootstrap 3 Starter Site
 
 Demo is here http://l5start.mrakodol.info/
@@ -157,10 +158,13 @@ Inspired by and based on [andrew13's Laravel-4-Bootstrap-Starter-Site](https://g
 ![Admin list users](http://i60.tinypic.com/1zen3n.png)
 =======
 # Laravel Framework 5  Bootstrap 3 Starter Site
+=======
+# Laravel Framework 5.1  Bootstrap 3 Starter Site
+>>>>>>> 0df02a1... update to laravel 5.1
 
 Demo is here http://l5start.mrakodol.info/
 
-## Starter Site based on on Laravel 5.0 and Boostrap 3
+## Starter Site based on on Laravel 5.1 and Boostrap 3
 * [Features](#feature1)
 * [Requirements](#feature2)
 * [How to install](#feature3)
@@ -172,7 +176,7 @@ Demo is here http://l5start.mrakodol.info/
 
 <a name="feature1"></a>
 ## Starter Site Features:
-* Laravel 5.0
+* Laravel 5.1
 * Twitter Bootstrap 3.2.0
 * Back-end
 	* Automatic install and settup website.
@@ -195,10 +199,13 @@ Demo is here http://l5start.mrakodol.info/
 <a name="feature2"></a>
 ##Requirements
 
-	PHP >= 5.5.0
-	MCrypt PHP Extension
-	Enable creating triger in database
+	PHP >= 5.5.9
+	OpenSSL PHP Extension
+	Mbstring PHP Extension
+	Tokenizer PHP Extension
 	SQL server(for example MySQL)
+	Composer
+	Node JS
 
 -----
 <a name="feature3"></a>
