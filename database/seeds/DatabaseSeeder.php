@@ -6,6 +6,28 @@ use Illuminate\Database\Eloquent\Model;
 class DatabaseSeeder extends Seeder {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	protected $faker;
+	public function getFaker()
+	{
+
+
+		if (empty($this->faker))
+		{
+			$faker = Faker\Factory::create();
+			$faker->addProvider(new Faker\Provider\Base($faker));
+			$faker->addProvider(new Faker\Provider\Lorem($faker));
+		}
+
+		return $this->faker = $faker;
+	 }
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+>>>>>>> 772c7ba... fixed issue #115
     public function run()
     {
         // Add calls to Seeders here
@@ -13,10 +35,6 @@ class DatabaseSeeder extends Seeder {
 		$this->call('LanguagesTableSeeder');
 		$this->call('ArticleCategoriesTableSeeder');
 		$this->call('ArticlesTableSeeder');
-		$this->call('PhotoAlbumsTableSeeder');
-        $this->call('PhotosTableSeeder');
-        $this->call('VideoAlbumsTableSeeder');
-        $this->call('VideosTableSeeder');
     }
 =======
 	/**
