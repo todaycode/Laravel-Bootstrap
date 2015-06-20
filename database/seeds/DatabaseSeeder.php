@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+<<<<<<< HEAD
 class DatabaseSeeder extends Seeder {
 
 <<<<<<< HEAD
@@ -30,11 +31,25 @@ class DatabaseSeeder extends Seeder {
 >>>>>>> 772c7ba... fixed issue #115
     public function run()
     {
+=======
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::unguard();
+
+>>>>>>> 374f930... ModelFactory articles
         // Add calls to Seeders here
         $this->call('UsersTableSeeder');
 		$this->call('LanguagesTableSeeder');
 		$this->call('ArticleCategoriesTableSeeder');
 		$this->call('ArticlesTableSeeder');
+<<<<<<< HEAD
     }
 =======
 	/**
@@ -59,3 +74,9 @@ class DatabaseSeeder extends Seeder {
 >>>>>>> eb9dff7... Initial work on articles resource.
 
 }
+=======
+
+        Model::reguard();
+    }
+}
+>>>>>>> 374f930... ModelFactory articles
