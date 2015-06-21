@@ -78,6 +78,11 @@
 @section('title') {{{ trans("admin/language.languages") }}} ::
 @parent @stop
 
+@section('styles')
+    @parent
+    <link href="{{ asset("css/flags.css") }}" rel="stylesheet">
+@endsection
+
 {{-- Content --}}
 @section('main')
     <div class="page-header">
