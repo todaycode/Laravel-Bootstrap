@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -42,12 +43,22 @@ class PhotoAlbum extends Model{
     }
 =======
 <?php namespace App;
+=======
+<?php
+
+namespace App;
+>>>>>>> bfebfde... add soft delete
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class PhotoAlbum extends Model{
+class PhotoAlbum extends Model
+{
 
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     /**
      * Deletes a gallery all
      * the associated images.

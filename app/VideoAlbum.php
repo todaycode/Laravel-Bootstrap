@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -38,11 +39,22 @@ class VideoAlbum extends Model {
 }
 =======
 <?php namespace App;
+=======
+<?php
+
+namespace App;
+>>>>>>> bfebfde... add soft delete
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class VideoAlbum extends Model {
+class VideoAlbum extends Model
+{
+
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
 
 	/**
 	 * Returns a formatted post content entry,
