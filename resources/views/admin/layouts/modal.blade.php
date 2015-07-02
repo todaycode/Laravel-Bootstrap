@@ -205,12 +205,14 @@
 <body>
 	<!-- Container -->
 	<div class="container">
-		<div class="page-header"></div>
-		<div class="pull-right">
-			<button class="btn btn-primary btn-sm close_popup">
-				<span class="glyphicon glyphicon-backward"></span> {{{
-				trans('admin/admin.back') }}}
-			</button>
+		<div class="page-header">
+			&nbsp;
+				<div class="pull-right">
+					<button class="btn btn-primary btn-xs close_popup">
+						<span class="glyphicon glyphicon-backward"></span> {{{
+						trans('admin/admin.back') }}}
+					</button>
+				</div>
 		</div>
 		<!-- Content -->
 		@yield('content')
@@ -245,7 +247,6 @@
 							  }).success(function() {
 								  setTimeout(function() {
 									  parent.$.colorbox.close();
-									  window.parent.location.reload();
 									  }, 10);
 							}).fail(function(jqXHR, textStatus, errorThrown) {
 			                    // Optionally alert the user of an error here...
@@ -272,7 +273,6 @@
 						}).success(function() {
 							  setTimeout(function() {
 								  parent.$.colorbox.close();
-								  window.parent.location.reload();
 								  }, 10);
 
 						}).fail(function(jqXHR, textStatus, errorThrown) {
@@ -291,8 +291,7 @@
 				});
 
 				$('.close_popup').click(function() {
-					parent.$.colorbox.close()
-					window.parent.location.reload();
+					parent.$.colorbox.close();
 				});
 			});
 		</script>
