@@ -176,7 +176,7 @@
 							trans("admin/modal.title") }}</label> <input
 							class="form-control" type="text" name="title" id="title"
 							value="{{{ Input::old('title', isset($news) ? $news->title : null) }}}" />
-						{!!$errors->first('title', '<label class="control-label">:message</label>')!!}
+						{{$errors->first('title', '<label class="control-label">:message</label>')}}
 					</div>
 				</div>
 				<div
@@ -201,8 +201,8 @@
 							trans("admin/news.introduction") }}</label>
 						<textarea class="form-control full-width wysihtml5"
 							name="introduction" value="introduction" rows="10">{{{ Input::old('introduction', isset($news) ? $news->introduction : null) }}}</textarea>
-						{!! $errors->first('introduction', '<label class="control-label">:message</label>')
-						!!}
+						{{ $errors->first('introduction', '<label class="control-label">:message</label>')
+						}}
 					</div>
 				</div>
 				<div
@@ -212,8 +212,8 @@
 							trans("admin/news.content") }}</label>
 						<textarea class="form-control full-width wysihtml5" name="content"
 							value="content" rows="10">{{{ Input::old('content', isset($news) ? $news->content : null) }}}</textarea>
-						{!! $errors->first('content', '<label class="control-label">:message</label>')
-						!!}
+						{{ $errors->first('content', '<label class="control-label">:message</label>')
+						}}
 					</div>
 				</div>
 				<div
@@ -223,8 +223,8 @@
 							trans("admin/news.source") }}</label> <input
 							class="form-control" type="text" name="source" id="source"
 							value="{{{ Input::old('source', isset($news) ? $news->source : null) }}}" />
-						{!! $errors->first('source', '<label class="control-label">:message</label>')
-						!!}
+						{{ $errors->first('source', '<label class="control-label">:message</label>')
+						}}
 					</div>
 				</div>
 				<div
