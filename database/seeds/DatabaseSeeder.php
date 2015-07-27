@@ -45,6 +45,7 @@ class DatabaseSeeder extends Seeder
 
 >>>>>>> 374f930... ModelFactory articles
         // Add calls to Seeders here
+<<<<<<< HEAD
         $this->call('UsersTableSeeder');
 		$this->call('LanguagesTableSeeder');
 		$this->call('ArticleCategoriesTableSeeder');
@@ -75,6 +76,12 @@ class DatabaseSeeder extends Seeder
 
 }
 =======
+=======
+        $this->call(UserTableSeeder::class);
+		$this->call(LanguagesTableSeeder::class);
+		$this->call(ArticleCategoriesTableSeeder::class);
+		$this->call(ArticlesTableSeeder::class);
+>>>>>>> f3d147b... Merge pull request #3468 from laracasts/patch-1
 
         Model::reguard();
     }
