@@ -78,10 +78,16 @@ class DatabaseSeeder extends Seeder
 =======
 =======
         $this->call(UserTableSeeder::class);
+<<<<<<< HEAD
 		$this->call(LanguagesTableSeeder::class);
 		$this->call(ArticleCategoriesTableSeeder::class);
 		$this->call(ArticlesTableSeeder::class);
 >>>>>>> f3d147b... Merge pull request #3468 from laracasts/patch-1
+=======
+		$this->call(LanguageTableSeeder::class);
+		$this->call(ArticleCategoryTableSeeder::class);
+		$this->call(ArticleTableSeeder::class);
+>>>>>>> 403e177... Align with Laravel naming convention of seeds
 
         Model::reguard();
     }

@@ -34,7 +34,7 @@ class LanguagesTableSeeder extends Seeder {
 use Illuminate\Database\Seeder;
 use App\Language;
 
-class LanguagesTableSeeder extends Seeder {
+class LanguageTableSeeder extends Seeder {
 
     public function run()
     {
