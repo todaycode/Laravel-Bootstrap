@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php namespace App\Http\Controllers;
 
 use App\News;
@@ -21,22 +22,29 @@ class NewsController extends BaseController {
 }
 =======
 <?php namespace App\Http\Controllers;
+=======
+<?php
+
+namespace App\Http\Controllers;
+>>>>>>> 542a1d5... new look with meny fixes in view, controllers and models and many more
 
 use App\Article;
 
 class ArticlesController extends Controller {
 
-	public function __construct()
-	{
-		$this->middleware('auth', [ 'except' => [ 'index', 'show' ] ]);
-	}
+    public function index()
+    {
+        $articles = Article::paginate(5);
+        $articles->setPath('articles/');
 
-	public function show($id)
-	{
-		// Get all the blog posts
-		$news = Article::find($id);
+        return view('article.index', compact('articles'));
+    }
 
-		return view('news.view_news', compact('news'));
+	public function show($slug)
+	{
+		$article = Article::findBySlugOrId($slug);
+
+		return view('article.view', compact('article'));
 	}
 
 }

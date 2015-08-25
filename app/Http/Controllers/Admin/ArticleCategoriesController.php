@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:app/Http/Controllers/Admin/NewsCategoryController.php
 <?php namespace App\Http\Controllers\Admin;
 
@@ -147,11 +148,16 @@ class NewsCategoryController extends AdminController {
 }
 =======
 <?php namespace App\Http\Controllers\Admin;
+=======
+<?php
+
+namespace App\Http\Controllers\Admin;
+>>>>>>> 542a1d5... new look with meny fixes in view, controllers and models and many more
 
 use App\ArticleCategory;
 use App\Language;
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\Admin\NewsCategoryRequest;
+use App\Http\Requests\Admin\ArticleCategoryRequest;
 use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
@@ -159,15 +165,18 @@ use Datatables;
 
 class ArticleCategoriesController extends AdminController {
 
-	/**
+    public function __construct()
+    {
+        view()->share('type', 'articlecategory');
+    }
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        // Show the page
-        return view('admin.newscategory.index');
+        return view('admin.articlecategory.index');
 	}
 
     /**
@@ -175,12 +184,10 @@ class ArticleCategoriesController extends AdminController {
      *
      * @return Response
      */
-    public function getCreate()
+    public function create()
     {
-        $languages = Language::all();
-        $language = "";
-        // Show the page
-        return view('admin.newscategory.create_edit', compact('languages','language'));
+        $languages = Language::lists('name', 'id')->toArray();
+        return view('admin.articlecategory.create_edit', compact('languages'));
     }
 
     /**
@@ -188,13 +195,11 @@ class ArticleCategoriesController extends AdminController {
      *
      * @return Response
      */
-    public function postCreate(NewsCategoryRequest $request)
+    public function store(ArticleCategoryRequest $request)
     {
-        $newscategory = new ArticleCategory();
-        $newscategory -> user_id = Auth::id();
-        $newscategory -> language_id = $request->language_id;
-        $newscategory -> title = $request->title;
-        $newscategory -> save();
+        $articlecategory = new ArticleCategory($request->all());
+        $articlecategory -> user_id = Auth::id();
+        $articlecategory -> save();
     }
     /**
      * Show the form for editing the specified resource.
@@ -202,13 +207,10 @@ class ArticleCategoriesController extends AdminController {
      * @param  int  $id
      * @return Response
      */
-    public function getEdit($id)
+    public function edit(ArticleCategory $articlecategory)
     {
-        $newscategory = ArticleCategory::find($id);
-        $language = $newscategory->language_id;
-        $languages = Language::all();
-
-        return view('admin.newscategory.create_edit',compact('newscategory','languages','language'));
+        $languages = Language::lists('name', 'id')->toArray();
+        return view('admin.articlecategory.create_edit',compact('articlecategory','languages'));
     }
 
     /**
@@ -217,13 +219,10 @@ class ArticleCategoriesController extends AdminController {
      * @param  int  $id
      * @return Response
      */
-    public function postEdit(NewsCategoryRequest $request, $id)
+    public function update(ArticleCategoryRequest $request, ArticleCategory $articlecategory)
     {
-        $newscategory = ArticleCategory::find($id);
-        $newscategory -> user_id_edited = Auth::id();
-        $newscategory -> language_id = $request->language_id;
-        $newscategory -> title = $request->title;
-        $newscategory -> save();
+        $articlecategory -> user_id_edited = Auth::id();
+        $articlecategory -> update($request->all());
     }
 
     /**
@@ -233,11 +232,9 @@ class ArticleCategoriesController extends AdminController {
      * @return Response
      */
 
-    public function getDelete($id)
+    public function delete(ArticleCategory $articlecategory)
     {
-        $newscategory = ArticleCategory::find($id);
-        // Show the page
-        return view('admin.newscategory.delete', compact('newscategory'));
+        return view('admin.articlecategory.delete', compact('articlecategory'));
     }
 
     /**
@@ -246,10 +243,9 @@ class ArticleCategoriesController extends AdminController {
      * @param $id
      * @return Response
      */
-    public function postDelete(DeleteRequest $request,$id)
+    public function destroy(ArticleCategory $articleCategory)
     {
-        $newscategory = ArticleCategory::find($id);
-        $newscategory->delete();
+        $articleCategory->delete();
     }
 
     /**
@@ -264,8 +260,8 @@ class ArticleCategoriesController extends AdminController {
             ->orderBy('article_categories.position', 'ASC');
 
         return Datatables::of($article_categories)
-           ->add_column('actions', '<a href="{{{ URL::to(\'admin/newscategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
-                <a href="{{{ URL::to(\'admin/newscategory/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
+           ->add_column('actions', '<a href="{{{ URL::to(\'admin/articlecategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
+                <a href="{{{ URL::to(\'admin/articlecategory/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
                 <input type="hidden" name="row" value="{{$id}}" id="row">')
             ->remove_column('id')
 

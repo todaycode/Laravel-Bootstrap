@@ -79,11 +79,16 @@ class DatabaseSeeder extends Seeder
 =======
         $this->call(UserTableSeeder::class);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$this->call(LanguagesTableSeeder::class);
 		$this->call(ArticleCategoriesTableSeeder::class);
 		$this->call(ArticlesTableSeeder::class);
 >>>>>>> f3d147b... Merge pull request #3468 from laracasts/patch-1
 =======
+=======
+        $this->command->info('Admin User created with username admin@admin.com and password admin');
+        $this->command->info('Test User created with username user@user.com and password user');
+>>>>>>> 542a1d5... new look with meny fixes in view, controllers and models and many more
 		$this->call(LanguageTableSeeder::class);
 		$this->call(ArticleCategoryTableSeeder::class);
 		$this->call(ArticleTableSeeder::class);

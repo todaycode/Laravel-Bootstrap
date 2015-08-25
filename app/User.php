@@ -5,13 +5,18 @@ namespace App;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+class User extends Model implements AuthenticatableContract,
+                                    AuthorizableContract,
+                                    CanResetPasswordContract
 {
+    use Authenticatable, Authorizable, CanResetPassword;
 
+<<<<<<< HEAD
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
@@ -68,16 +73,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $fillable = ['name', 'email', 'password'];
 >>>>>>> 0df02a1... update to laravel 5.1
 
+=======
+    protected $guarded  = array('id');
+>>>>>>> 542a1d5... new look with meny fixes in view, controllers and models and many more
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+<<<<<<< HEAD
 
 	public function articles()
 	{
 		return $this->hasMany('App\Article');
 	}
 >>>>>>> eb9dff7... Initial work on articles resource.
+=======
+>>>>>>> 542a1d5... new look with meny fixes in view, controllers and models and many more
 }
