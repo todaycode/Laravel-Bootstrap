@@ -246,6 +246,7 @@
             });
         });
     </script>
+    @yield('scripts')
 </div>
 </body>
 >>>>>>> 75c9bc1... delete roles for users and fix translate functionality

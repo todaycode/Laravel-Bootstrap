@@ -347,4 +347,11 @@ Inspired by and based on [andrew13's Laravel-4-Bootstrap-Starter-Site](https://g
 ![Admin dashboard](http://i58.tinypic.com/b9g2g1.jpg)
 ![Admin users](http://i60.tinypic.com/301hemp.jpg)
 ![Admin list users](http://i58.tinypic.com/2ujl5dh.jpg)
+<<<<<<< HEAD
 >>>>>>> 542a1d5... new look with meny fixes in view, controllers and models and many more
+=======
+
+
+## More advanced one
+If you need more advanced starter template with 70+ admin pages please check [Josh on CodeCanyon](http://goo.gl/Mnhunr)
+>>>>>>> 2f96fb2... Update readme.md

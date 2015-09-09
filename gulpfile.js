@@ -18,7 +18,9 @@ var paths = {
     'metisMenu': 'vendor/metisMenu/dist',
     'datatablesResponsive': 'vendor/datatables-responsive',
     'summernote': 'vendor/summernote/dist',
-    'select2': 'vendor/select2/dist'
+    'select2': 'vendor/select2/dist',
+    'jquery_ui':  'vendor/jquery-ui',
+    'justifiedGallery':  'vendor/Justified-Gallery/dist/',
 };
 
 elixir.config.sourcemaps = false;
@@ -33,7 +35,9 @@ elixir(function(mix) {
     mix.copy('resources/' + paths.fontawesome + '/fonts/**', 'public/fonts');
 
     // Copy images straight to public
-    mix.copy('resources/' + paths.colorbox + '/example3/images/**', 'public/img');
+    mix.copy('resources/' + paths.colorbox + '/example3/images/**', 'public/css/images');
+    mix.copy('resources/' + paths.jquery_ui + '/themes/base/images/**', 'public/css/images');
+
 
     // Copy flag resources
     mix.copy('resources/' + paths.flag + '/css/flag-sprites.min.css', 'public/css/flags.css');
@@ -46,18 +50,21 @@ elixir(function(mix) {
         '../../' + paths.fontawesome + '/css/font-awesome.css',
         '../../' + paths.bootswatch + '/bootstrap.css',
         '../../' + paths.colorbox + '/example3/colorbox.css',
+        '../../' + paths.justifiedGallery + '/css/justifiedGallery.css'
     ], 'public/css/site.css');
 
     // Merge Site scripts.
     mix.scripts([
         '../../' + paths.jquery + '/jquery.js',
         '../../' + paths.bootstrap + '/js/bootstrap.js',
-        '../../' + paths.colorbox + '/jquery.colorbox.js'
+        '../../' + paths.colorbox + '/jquery.colorbox.js',
+        '../../' + paths.justifiedGallery + '/js/jquery.justifiedGallery.js'
     ], 'public/js/site.js');
 
     // Merge Admin CSSs.
     mix.styles([
         '../../' + paths.bootstrap + '/css/bootstrap.css',
+        '../../' + paths.jquery_ui + '/themes/base/jquery.ui.all.css',
         '../../' + paths.bootstrap + '/css/bootstrap-theme.css',
         '../../' + paths.fontawesome + '/css/font-awesome.css',
         '../../' + paths.bootswatch + '/bootstrap.css',
@@ -74,6 +81,7 @@ elixir(function(mix) {
     // Merge Admin scripts.
     mix.scripts([
         '../../' + paths.jquery + '/jquery.js',
+        '../../' + paths.jquery_ui + '/ui/jquery.ui.core.js',
         '../../' + paths.bootstrap + '/js/bootstrap.js',
         '../../' + paths.colorbox + '/jquery.colorbox.js',
         '../../' + paths.dataTables + '/js/jquery.dataTables.js',
