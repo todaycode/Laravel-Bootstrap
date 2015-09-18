@@ -173,6 +173,7 @@ Demo is here http://l5start.mrakodol.info/
 * [License](#feature6)
 * [Additional information](#feature7)
 * [How Starter site is look like](#feature8)
+* [Advanced Alternatives](#feature9)
 
 <a name="feature1"></a>
 ## Starter Site Features:
@@ -351,7 +352,17 @@ Inspired by and based on [andrew13's Laravel-4-Bootstrap-Starter-Site](https://g
 >>>>>>> 542a1d5... new look with meny fixes in view, controllers and models and many more
 =======
 
+----
+<a name="feature9"></a>
+## Advanced alternatives
+If you are interested in advanced starter sites where you can get 70+ admin pages, 20+ frontend pages with color schemes and a CRUD generator then visit below links
 
+[Josh](http://goo.gl/Mnhunr)
+
+<<<<<<< HEAD
 ## More advanced one
 If you need more advanced starter template with 70+ admin pages please check [Josh on CodeCanyon](http://goo.gl/Mnhunr)
 >>>>>>> 2f96fb2... Update readme.md
+=======
+[Chandra](http://goo.gl/hk4ut3)
+>>>>>>> 5d92d50... Update readme.md
