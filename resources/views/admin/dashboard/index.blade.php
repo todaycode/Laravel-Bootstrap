@@ -183,11 +183,11 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{$newscategory}}</div>
-                            <div>{{ trans("admin/admin.news_categories") }}!</div>
+                            <div>{{ trans("admin/articlecategory.articlecategories") }}!</div>
                         </div>
                     </div>
                 </div>
-                <a href="{{URL::to('admin/newscategory')}}">
+                <a href="{{url('admin/articlecategory')}}">
                     <div class="panel-footer">
                         <span class="pull-left">{{ trans("admin/admin.view_detail") }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -206,11 +206,11 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{$news}}</div>
-                            <div>{{ trans("admin/admin.news_items") }}!</div>
+                            <div>{{ trans("admin/article.article") }}!</div>
                         </div>
                     </div>
                 </div>
-                <a href="{{URL::to('admin/news')}}">
+                <a href="{{url('admin/article')}}">
                     <div class="panel-footer">
                         <span class="pull-left">{{ trans("admin/admin.view_detail") }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -233,7 +233,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{URL::to('admin/photoalbum')}}">
+                <a href="{{url('admin/photoalbum')}}">
                     <div class="panel-footer">
                         <span class="pull-left">{{ trans("admin/admin.view_detail") }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -256,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{URL::to('admin/photo')}}">
+                <a href="{{url('admin/photo')}}">
                     <div class="panel-footer">
                         <span class="pull-left">{{ trans("admin/admin.view_detail") }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -279,7 +279,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{URL::to('admin/users')}}">
+                <a href="{{url('admin/user')}}">
                     <div class="panel-footer">
                         <span class="pull-left">{{ trans("admin/admin.view_detail") }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
