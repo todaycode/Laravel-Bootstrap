@@ -256,5 +256,9 @@
     <!-- ./ form actions -->
 {!! Form::close() !!}
 </div>
+<<<<<<< HEAD
 @stop
 >>>>>>> 75c9bc1... delete roles for users and fix translate functionality
+=======
+@endsection
+>>>>>>> 6a9904b... endsection fix in views

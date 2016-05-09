@@ -166,7 +166,7 @@
 @extends('admin.layouts.default')
 
 {{-- Web site Title --}}
-@section('title') {!! $title !!} :: @parent @stop
+@section('title') {!! $title !!} :: @parent @endsection
 
 {{-- Content --}}
 @section('main')

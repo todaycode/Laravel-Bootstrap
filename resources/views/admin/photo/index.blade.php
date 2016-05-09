@@ -78,7 +78,7 @@
 
 {{-- Web site Title --}}
 @section('title') {!! trans("admin/photo.photo") !!}
-:: @parent @stop
+:: @parent @endsection
 
 {{-- Content --}}
 @section('main')
@@ -109,9 +109,13 @@
         </thead>
         <tbody></tbody>
     </table>
-@stop
+@endsection
 
 {{-- Scripts --}}
 @section('scripts')
+<<<<<<< HEAD
 @stop
 >>>>>>> fdc0d41... - Replaced Hash with bcrypt in UserController.php.
+=======
+@endsection
+>>>>>>> 6a9904b... endsection fix in views

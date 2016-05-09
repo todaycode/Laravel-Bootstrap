@@ -33,6 +33,7 @@ $photo_album->name !!} :: @parent @stop @section('content')
 @extends('layouts.app')
 @section('title')
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{!! $photo_album->name !!} :: @parent @stop @section('content')
 <h3>{!! $photo_album->name !!}</h3>
 >>>>>>> 6ef6597... small fix in photo frontend
@@ -49,6 +50,10 @@ $photo_album->name !!} :: @parent @stop @section('content')
 <script>
 =======
     {!! $photo_album->name !!} :: @parent @stop @section('content')
+=======
+    {!! $photo_album->name !!} :: @parent @endsection
+@section('content')
+>>>>>>> 6a9904b... endsection fix in views
     <h3>{!! $photo_album->name !!}</h3>
     <div id="mygallery">
         @foreach($photos as $item)
@@ -57,11 +62,15 @@ $photo_album->name !!} :: @parent @stop @section('content')
             </a>
         @endforeach
     </div>
-@stop
+@endsection
 @section('scripts')
     <script>
 >>>>>>> c96159c... fixed photo upload
         $("#mygallery").justifiedGallery();
     </script>
+<<<<<<< HEAD
 @stop
 >>>>>>> 47d9a04... Started use of gulp and package.json for less or sass compilation.:resources/views/photo/view_album.blade.php
+=======
+@endsection
+>>>>>>> 6a9904b... endsection fix in views
