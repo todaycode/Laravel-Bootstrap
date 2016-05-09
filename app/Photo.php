@@ -65,7 +65,7 @@ class Photo extends Model
      */
     public function author()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class, 'user_id');
     }
     /**
      * Get the gallery for pictures.
@@ -74,7 +74,7 @@ class Photo extends Model
      */
     public function album()
     {
-        return $this->belongsTo('App\PhotoAlbum');
+        return $this->belongsTo(PhotoAlbum::class,'photo_album_id');
     }
 
     /**
@@ -84,7 +84,7 @@ class Photo extends Model
      */
     public function language()
     {
-        return $this->belongsTo('App\Language');
+        return $this->belongsTo(Language::class,'language_id');
     }
 }
 >>>>>>> ef337ac... Added table seeders and TestDummy for:

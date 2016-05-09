@@ -69,7 +69,7 @@ class PhotoAlbum extends Model
      */
     public function author()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 	 /**
      * Get the post's comments.
@@ -78,7 +78,7 @@ class PhotoAlbum extends Model
      */
     public function photos()
     {
-        return $this->hasMany('App\Photo');
+        return $this->hasMany(Photo::class,'photo_album_id');
     }
 
     /**
@@ -88,7 +88,7 @@ class PhotoAlbum extends Model
      */
     public function language()
     {
-        return $this->belongsTo('App\Language');
+        return $this->belongsTo(Language::class,'language_id');
     }
 <<<<<<< HEAD
 >>>>>>> ef337ac... Added table seeders and TestDummy for:

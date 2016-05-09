@@ -126,7 +126,7 @@ class Article extends Model implements SluggableInterface {
 	 */
 	public function author()
 	{
-		return $this->belongsTo('App\User', 'user_id');
+		return $this->belongsTo(User::class, 'user_id');
 	}
 
 	/**
@@ -136,7 +136,7 @@ class Article extends Model implements SluggableInterface {
 	 */
 	public function language()
 	{
-		return $this->belongsTo('App\Language');
+		return $this->belongsTo(Language::class,'language_id');
 	}
 
 	/**
@@ -146,7 +146,7 @@ class Article extends Model implements SluggableInterface {
 	 */
 	public function category()
 	{
-		return $this->belongsTo('App\ArticleCategory');
+		return $this->belongsTo(ArticleCategory::class,'article_category_id');
 	}
 
 }
